@@ -6,3 +6,7 @@ node_modules/
 
 ## webstorm
 .idea/
+
+## cypress
+tests/cypress/videos/
+tests/cypress/screenshots/

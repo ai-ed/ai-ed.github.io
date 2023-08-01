@@ -5,6 +5,7 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
+    container: cypress/included:latest
     steps:
 
       - name: Checkout
@@ -35,5 +36,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
+      - name: Run unit tests
         run: npm run test
+
+      - name: Run acceptance tests
+        run: |
+          export LIBVA_DRIVER_NAME=electron
+          npm run start:acceptance &
+          npm run acceptance
+
+      - name: Upload screenshots and videos from acceptance tests
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: acceptance-test-artifacts
+          path: |
+            tests/cypress/screenshots
+            tests/cypress/videos
