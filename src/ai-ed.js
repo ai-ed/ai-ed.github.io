@@ -5,7 +5,7 @@ function header() {
 		<header>
 			<h1>AI-ED</h1>
 			<a class="btn" href="/index.html">Home</a>
-			<a class="btn" href="/resources.html">Resources</a>
+			<a class="btn" resources" href="/resources.html">Resources</a>
 			<a class="btn" href="https://github.com/ai-ed">Contribute &nearr;</a>
 			<h2>${VERSION}</h2>
 		</header>
