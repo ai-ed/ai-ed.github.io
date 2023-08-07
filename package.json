@@ -5,7 +5,8 @@
         "start:acceptance": "browser-sync start --no-open --server --files='**/*'",
         "test:watch": "npx jest --watchAll",
         "test": "npx jest",
-        "acceptance": "cd tests && npx cypress run"
+        "acceptance": "cd tests && npx cypress run",
+        "act:pr": "act pull_request --artifact-server-path /tmp/artifacts"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.22.9",
@@ -18,8 +19,5 @@
         "jsdom": "^22.1.0",
         "prettier": "3.0.1",
         "ramda": "^0.29.0"
-    },
-    "dependencies": {
-        "mocha-param": "^2.0.1"
     }
 }
