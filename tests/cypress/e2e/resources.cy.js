@@ -1,5 +1,6 @@
 import * as R from "ramda";
-import { it, fc } from '@fast-check/jest';
+import * as fc from "fast-check";
+const itParam = require('mocha-param').itParam;
 
 
 const months = [
@@ -92,23 +93,47 @@ const toolArb = fc.record({
     name: fc.lorem({maxCount: 3}),
     affiliated: fc.lorem({maxCount: 3}),
     date: fc.date({ min: new Date('2000-01-01T00:00:00.000Z') }).map(d => [d.getYear(), d.getMonth() + 1]),
-    tags: fc.array(fc.constantFrom(["Chat", "Research", "Students", "Teachers", "Consiglieri", "Pope", "Tomatina"]), {minLength: 1}),
+    tags: fc.array(fc.constantFrom(["Chat", "Research", "Students", "Teachers"]), {minLength: 1}),
     link: fc.constant("https://chat.openai.com/"),
     blurb: fc.lorem({maxCount: 20}),
     description: fc.lorem({maxCount: 2, mode: "sentences"}),
 });
 
-const toolListArb = fc.array(toolArb, {minSize: 1, maxSize:5})
+const toolListArb = fc.array(toolArb, {minLength: 1, maxLength:5})
 
 describe("Resources page", () => {
     describe("When loading the page", () => {
-        it.prop([toolListArb], {numRuns: 2})("Displays all the tools", (expected) => {
+        const expected = Array.from([toolListArb]);
+        // const expected = [
+        //     {
+        //         name: "ChatGPT",
+        //         affiliated: "OpenAI",
+        //         date: [2022, 10],
+        //         tags: ["Chat", "Research", "Students", "Teachers"],
+        //         link: "https://chat.openai.com/",
+        //         blurb: "A chat application using OpenAI's GPT LLM.",
+        //         description:
+        //         "An online chat application utilizing OpenAI's GPT large language model (LLM) to understand user inputs and generate outputs.",
+        //     },
+        //     {
+        //         name: "DALL-E",
+        //         affiliated: "OpenAI",
+        //         date: [2022, 4],
+        //         tags: ["Research", "Students", "Teachers"],
+        //         link: "https://labs.openai.com/",
+        //         blurb: "An image generation application by OpenAI.",
+        //         description: "An image generation application by OpenAI.",
+        //     },
+        // ]; 
+        it("Displays all the tools", () => {
             cy.intercept("GET", "/resources.json", {
                 statusCode: 200,
                 body: expected,
             });
             cy.visit("http://localhost:3000/");
             cy.get('[data-testid="resources"]').click();
+            cy.log(Array.isArray(Array.from(toolListArb)));
+            cy.log("here are the tools ", [toolListArb])
             const actualTools = parseToolsFromPage();
             const expectedTools = prepareTools(expected);
             actualTools.should("deep.eq", expectedTools);
