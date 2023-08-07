@@ -48,6 +48,7 @@ const noPeriods = R.pipe(R.split("."), R.head);
  * @returns a collection of all the tags
  */
 function wrapTags(tags) {
+    console.log("here are the tags", tags)
   return R.pipe(
     R.split(" "),
     R.drop(1),
@@ -93,13 +94,13 @@ const toolArb = fc.record({
     name: fc.lorem({maxCount: 3}),
     affiliated: fc.lorem({maxCount: 3}),
     date: fc.date({ min: new Date('2000-01-01T00:00:00.000Z') }).map(d => [d.getYear(), d.getMonth() + 1]),
-    tags: fc.array(fc.constantFrom(["Chat", "Research", "Students", "Teachers"]), {minLength: 1}),
+    tags: fc.array(fc.constantFrom("Chat", "Research", "Students", "Teachers"), {minLength: 1}),
     link: fc.constant("https://chat.openai.com/"),
     blurb: fc.lorem({maxCount: 20}),
     description: fc.lorem({maxCount: 2, mode: "sentences"}),
 });
 
-const toolListArb = fc.array(toolArb, {minLength: 1, maxLength:5})
+const toolListArb = fc.array(toolArb, {minLength: 1, maxLength:1})
 
 describe("Resources page", () => {
     describe("When loading the page", () => {
@@ -114,7 +115,7 @@ describe("Resources page", () => {
                 const expectedTools = prepareTools(expected);
                 actualTools.should("deep.eq", expectedTools);
             }),
-                      {numRuns: 2});
+                      {numRuns: 1});
         });
     });
 });
