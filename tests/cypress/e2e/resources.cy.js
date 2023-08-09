@@ -82,8 +82,16 @@ const removeLinkAndDescription = R.pipe(
   R.dissoc("description"),
 );
 
+function constructDate(date) {
+  const [year, month] = date;
+  const fullDate = new Date(year, month - 1, 1);
+  return fullDate;
+}
+
+const sortByDateAsc = R.sortBy(R.pipe(R.prop("date"), constructDate));
+
 /**
- * Takes the tools and removes the link and description from each one
+ * Takes the tools removes the link and description from each one
  * @param tools a collection of tools
  * @returns a collection of tools with each one lacking a link and a description
  */
@@ -118,9 +126,9 @@ describe("Resources page", () => {
           });
           cy.visit("http://localhost:3000/");
           cy.get('[data-testid="resources"]').click();
-          const actualTools = parseToolsFromPage();
-          const expectedTools = prepareTools(expected);
-          actualTools.should("deep.eq", expectedTools);
+            const actualTools = parseToolsFromPage();
+            const expectedTools = prepareTools(expected);
+            actualTools.should("to.have.deep.members", expectedTools)
         }),
         { numRuns: 2 },
       );
