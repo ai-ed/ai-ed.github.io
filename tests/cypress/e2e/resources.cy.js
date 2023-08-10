@@ -82,14 +82,6 @@ const removeLinkAndDescription = R.pipe(
   R.dissoc("description"),
 );
 
-function constructDate(date) {
-  const [year, month] = date;
-  const fullDate = new Date(year, month - 1, 1);
-  return fullDate;
-}
-
-const sortByDateAsc = R.sortBy(R.pipe(R.prop("date"), constructDate));
-
 /**
  * Takes the tools removes the link and description from each one
  * @param tools a collection of tools
@@ -98,6 +90,7 @@ const sortByDateAsc = R.sortBy(R.pipe(R.prop("date"), constructDate));
 function prepareTools(tools) {
   return R.map(removeLinkAndDescription, tools);
 }
+
 
 const toolArb = fc.record({
   name: fc.lorem({ maxCount: 3 }),
