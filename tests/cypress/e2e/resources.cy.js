@@ -91,7 +91,9 @@ function prepareTools(tools) {
   return R.map(removeLinkAndDescription, tools);
 }
 
-
+/**
+ * Generates an example tool
+ */
 const toolArb = fc.record({
   name: fc.lorem({ maxCount: 3 }),
   affiliated: fc.lorem({ maxCount: 3 }),
@@ -106,6 +108,9 @@ const toolArb = fc.record({
   description: fc.lorem({ maxCount: 2, mode: "sentences" }),
 });
 
+/**
+ * Generates a list of example tools
+ */
 const toolListArb = fc.array(toolArb, { minLength: 1, maxLength: 5 });
 
 describe("Resources page", () => {
@@ -119,9 +124,9 @@ describe("Resources page", () => {
           });
           cy.visit("http://localhost:3000/");
           cy.get('[data-testid="resources"]').click();
-            const actualTools = parseToolsFromPage();
-            const expectedTools = prepareTools(expected);
-            actualTools.should("to.have.deep.members", expectedTools)
+          const actualTools = parseToolsFromPage();
+          const expectedTools = prepareTools(expected);
+          actualTools.should("to.have.deep.members", expectedTools);
         }),
         { numRuns: 2 },
       );
