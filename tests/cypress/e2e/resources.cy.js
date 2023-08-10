@@ -46,7 +46,6 @@ const noPeriods = R.pipe(R.split("."), R.head);
  * @returns a collection of all the tags
  */
 function wrapTags(tags) {
-  console.log("here are the tags", tags);
   return R.pipe(
     R.split(" "),
     R.drop(1),
