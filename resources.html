@@ -12,6 +12,19 @@
 		<script type="module" src="src/resources.js"></script>
 	</head>
 	<body>
+      <section id="header" >
+      </section>
+
+      <script type="text/javascript">
+       window.onload = () =>  {
+
+           const headerTempElem = document.getElementById("header-template").innerHTML;
+           const headerTemplate = Handlebars.compile(headerTempElem);
+
+           const header = document.getElementById("header");
+           header.innerHTML = headerTemplate()
+       }
+      </script>
 		<div id="root" class="cols">
 			<div class="col-filters">
 				<img src="static/filters.svg" class="filters-toggle" />

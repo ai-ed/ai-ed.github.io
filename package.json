@@ -19,5 +19,8 @@
         "jsdom": "^22.1.0",
         "prettier": "3.0.1",
         "ramda": "^0.29.0"
+    },
+    "dependencies": {
+        "handlebars": "^4.7.8"
     }
 }
