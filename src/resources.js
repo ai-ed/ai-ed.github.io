@@ -1,4 +1,4 @@
-import {header} from "./ai-ed.js";
+// import {header} from "./ai-ed.js";
 
 const MONTHS = [
 	"January",
@@ -179,7 +179,7 @@ function update() {
 }
 
 window.onload = async () => {
-	header();
+	// header();
 
 	try {
 		let response = await fetch("/resources.json");
