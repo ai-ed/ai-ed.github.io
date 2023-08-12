@@ -1,3 +1,4 @@
+import * as Handlebars from "handlebars";
 const R = require('ramda');
 const  {sortResources, filterResources} = require('../src/resources') 
 

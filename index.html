@@ -10,7 +10,9 @@
 		<meta name="charset" content="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="./src/ai-ed.js"></script>
+    <script type="module" src="./src/ai-ed.js">
+            import {header} from "./src/ai-ed.js"
+    </script>
 	</head>
 	<body>
 
@@ -52,7 +54,7 @@
 			     </div>
 		       </section> -->
           <script >
-header()
+           header()
               </script>
 	</body>
 </html>

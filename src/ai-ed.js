@@ -1,3 +1,4 @@
+import * as Handlebars from "handlebars";
 
 const headerView = `
 		<header>
@@ -13,7 +14,7 @@ const hdrTemplate = Handlebars.compile(headerView);
 
 const VERSION = "July 2023";
 
-function header() {
+export function header() {
 const header = document.getElementById("header");
 	header.innerHTML = hdrTemplate({version: VERSION}) ;
 }

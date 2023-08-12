@@ -1,4 +1,4 @@
-import { header } from "./ai-ed.js";
+import {header} from "./ai-ed.js";
 
 const MONTHS = [
 	"January",
