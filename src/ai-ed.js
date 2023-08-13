@@ -10,7 +10,6 @@ const headerView = `
 
 const hdrTemplate = Handlebars.compile(headerView);
 
-
 const VERSION = "July 2023";
 
 export function header() {
