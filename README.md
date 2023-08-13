@@ -30,6 +30,8 @@ Which is an array of JavaScript Objects containing the following fields:
 
 ## Local development
 
+* If you want to view changes made to the site or execute unit/acceptance tests, run `npm run build` to have `webpack` compile the files. The site and tests will then use the newest compiled files.
+
 ### Requirements
 * Install [node](https://nodejs.org/en) using [nvm](https://github.com/nvm-sh/nvm)
 
@@ -46,7 +48,6 @@ and will watch all the files and update the browser when things change
 
 #### Unit tests
 * Run `npm run test` so the tests are continuously run. When you make any changes to the files which affect the tests and save, it will immediately show up on the test watch.
- 
 
 #### Acceptance testing
 * Run `npm run acceptance` so the cypress tests are run.
