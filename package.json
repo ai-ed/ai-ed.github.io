@@ -1,8 +1,10 @@
 {
     "type": "module",
     "scripts": {
-        "start": "browser-sync start --server --files='**/*' ",
+        "start": "browser-sync start --server --files='**/*'",
         "start:acceptance": "browser-sync start --no-open --server --files='**/*'",
+        "build:watch": "webpack --watch",
+        "build": "webpack",
         "test:watch": "npx jest --watchAll",
         "test": "npx jest",
         "acceptance": "cd tests && npx cypress run",

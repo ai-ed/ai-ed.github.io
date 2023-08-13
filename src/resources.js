@@ -178,8 +178,7 @@ function update() {
 	populate(sorted_and_filtered);
 }
 
-window.onload = async () => {
-	// header();
+export const renderTools = async () => {
 
 	try {
 		let response = await fetch("/resources.json");
@@ -203,7 +202,7 @@ window.onload = async () => {
 	for (const r of resources) {
 		for (const t of r.tags) {
 			// check if the map has the tag
-			// if it doesnt, create the tag button and add tag in the map
+			// if it doesn't, create the tag button and add tag in the map
 			if (!tag_enabled.has(t)) {
 
 				tag_enabled.set(t, false);
