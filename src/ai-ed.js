@@ -1,4 +1,4 @@
-import * as Handlebars from "handlebars";
+import * as Handlebars from "./handlebars.runtime-latest.js";
 
 const headerView = `
 		<header>

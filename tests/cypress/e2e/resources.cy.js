@@ -1,3 +1,4 @@
+import * as Handlebars from "handlebars";
 import * as R from "ramda";
 import * as fc from "fast-check";
 
