@@ -1,4 +1,4 @@
-import * as Handlebars from "./handlebars.runtime-latest.js";
+import * as Handlebars from "handlebars";
 
 const headerView = `
     <h1>AI-ED</h1>
