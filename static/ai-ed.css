@@ -38,6 +38,11 @@ body {
     height: 100%;
 }
 
+.welcome-msg {
+    height: 50%;
+    align-self: center;
+}
+
 /* h1, h2, h3, p, a { */
 /* 	margin: 0; */
 /* } */
