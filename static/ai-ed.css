@@ -12,22 +12,32 @@
 	--card-brdsel: #d8d8e0;
 }
 
-.navbar {
+.header {
     margin: auto;
     align-items: center;
     gap: 1rem
 }
 
-.navbar-start {
+.header-items {
     gap: 1rem;
 }
 
-/* body { */
-/* 	margin: 0; */
-/* 	background-color: var(--bg); */
-/* 	color: var(--fg); */
-/* 	font-family: "Inter", sans-serif; */
-/* } */
+html {
+    height: 100%
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg);
+	color: var(--fg);
+	font-family: "Inter", sans-serif;
+  height: 100%;
+}
+
+#main-wrap {
+    height: 100%;
+}
+
 /* h1, h2, h3, p, a { */
 /* 	margin: 0; */
 /* } */

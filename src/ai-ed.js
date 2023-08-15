@@ -1,7 +1,7 @@
 import * as Handlebars from "handlebars";
 
 const headerView = `
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar header" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
 <div class="navbar-item">
     AI-ED
@@ -14,7 +14,7 @@ const headerView = `
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-start header-items">
     <a class="navbar-item button is-rounded" href="/index.html">Home</a>
     <a class="navbar-item button is-rounded" href="/resources.html">Resources</a>
     <a class="navbar-item button is-rounded" href="https://github.com/ai-ed">Contribute &nearr;</a>
@@ -30,9 +30,10 @@ const hdrTemplate = Handlebars.compile(headerView);
 const VERSION = "July 2023";
 
 export function header() {
-    const body = document.getElementsByTagName("body")[0];
-    const navWrapper = document.createElement("div")
+    const mainWrapper = document.getElementById("main-wrap");
+    const navWrapper = document.createElement("header")
     navWrapper.classList.add("is-flex")
+    navWrapper.classList.add("is-fixed-top")
 	  navWrapper.innerHTML = hdrTemplate({version: VERSION});
-    document.body.insertBefore(navWrapper, document.body.firstChild)
+    mainWrapper.insertBefore(navWrapper, mainWrapper.firstChild)
 }
