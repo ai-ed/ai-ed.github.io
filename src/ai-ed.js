@@ -31,7 +31,8 @@ const VERSION = "July 2023";
 
 export function header() {
     const body = document.getElementsByTagName("body")[0];
-    const header = document.createElement("div")
-	  header.innerHTML = hdrTemplate({version: VERSION});
-    document.body.insertBefore(header, document.body.firstChild)
+    const navWrapper = document.createElement("div")
+    navWrapper.classList.add("is-flex")
+	  navWrapper.innerHTML = hdrTemplate({version: VERSION});
+    document.body.insertBefore(navWrapper, document.body.firstChild)
 }
