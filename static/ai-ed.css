@@ -15,7 +15,9 @@
 .header {
     margin: auto;
     align-items: center;
-    gap: 1rem
+    gap: 1rem;
+    padding: 10px;
+    background: transparent;
 }
 
 .header-items {
