@@ -6,24 +6,24 @@ const headerView = `
 <div class="navbar-item">
     AI-ED
 </div>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" onClick="activateMenu()" id="nav-burger" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start header-items">
+    <div id="menu" class="header-items navbar-menu">
     <a class="navbar-item button is-rounded" href="/index.html">Home</a>
     <a class="navbar-item button is-rounded" href="/resources.html">Resources</a>
     <a class="navbar-item button is-rounded" href="https://github.com/ai-ed">Contribute &nearr;</a>
     <h2 class="navbar-item">{{version}}</h2>
     </div>
-  </div>
-</nav>
+    </nav>
+
 
 `;
+
 
 const hdrTemplate = Handlebars.compile(headerView);
 
