@@ -12,6 +12,10 @@
 	--card-brdsel: #d8d8e0;
 }
 
+.button {
+    background-color: var(--lt);
+}
+
 .header {
     margin: auto;
     align-items: center;
