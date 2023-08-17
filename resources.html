@@ -6,32 +6,45 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="static/ai-ed.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 		<link rel="icon" type="image/svg" href="static/ai-ed.svg" />
 		<meta name="charset" content="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="dist/main.js"></script>
 	</head>
 	<body>
-		<div id="root" class="cols">
-			<div class="col-filters">
-				<img src="static/filters.svg" class="filters-toggle" />
-				<div class="filters-body">
-					<h1>Filters</h1>
-					<hr>
-					<label for="sort-by">Sort by</label>
-					<select name="sort-by" id="sort-by">
-						<option value="newest">Newest</option>
-						<option value="oldest">Oldest</option>
-						<option value="name">Name</option>
-					</select>
-					<hr>
-					<p>Tags:</p>
-					<div id="tags"></div>
-					<hr>
-					<p id="info"></p>
-				</div>
-			</div>
-			<div id="resources" class="col-resources"></div>
+
+
+          <div id="main-wrap" class="is-flex  is-flex-direction-column ">
+              <div class="columns">
+<nav class="level">
+    <div class="level-left">
+        <div class="level-item">
+		      <div id="root" class="column section cols">
+			        <div class="col-filters">
+				          <img src="static/filters.svg" class="filters-toggle" />
+				          <div class="filters-body">
+					            <h1>Filters</h1>
+					            <hr>
+					            <label for="sort-by">Sort by</label>
+					            <select name="sort-by" id="sort-by">
+						              <option value="newest">Newest</option>
+						              <option value="oldest">Oldest</option>
+						              <option value="name">Name</option>
+					            </select>
+					            <hr>
+					            <p>Tags:</p>
+					            <div id="tags"></div>
+					            <hr>
+					            <p id="info"></p>
+				          </div>
+			        </div>
+		      </div>
+		    </div>
 		</div>
+			    <div id="resources" class="level-item section is-flex"></div>
+
+		</div>
+    </div>
 	</body>
 </html>
