@@ -3,7 +3,7 @@ import * as Handlebars from "handlebars";
 const headerView = `
 <nav class="navbar header" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-<div class="navbar-item is-size-5 has-text-weight-semibold">
+<div class="navbar-item is-size-3 has-text-weight-bold">
     AI-ED
 </div>
     <a role="button" onClick="activateMenu()" id="nav-burger" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu">
@@ -17,7 +17,6 @@ const headerView = `
     <a class="navbar-item button is-rounded is-medium" href="/index.html">Home</a>
     <a class="navbar-item button is-rounded is-medium" href="/resources.html">Resources</a>
     <a class="navbar-item button is-medium is-rounded" href="https://github.com/ai-ed">Contribute &nearr;</a>
-    <h2 class="navbar-item is-size-5">{{version}}</h2>
     </div>
     </nav>
 

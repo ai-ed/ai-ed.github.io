@@ -54,6 +54,10 @@ body {
     font-weight: 900;
     color: black;
 }
+
+.navbar-menu.is-active {
+    display: grid;
+}
 /* h1, h2, h3, p, a { */
 /* 	margin: 0; */
 /* } */
