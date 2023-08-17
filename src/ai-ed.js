@@ -12,15 +12,12 @@ const headerView = `
       <span aria-hidden="true"></span>
     </a>
   </div>
-
     <div id="menu" class="header-items navbar-menu">
     <a class="navbar-item button is-rounded is-medium" href="/index.html">Home</a>
     <a class="navbar-item button is-rounded is-medium" href="/resources.html">Resources</a>
     <a class="navbar-item button is-medium is-rounded" href="https://github.com/ai-ed">Contribute &nearr;</a>
     </div>
     </nav>
-
-
 `;
 
 

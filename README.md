@@ -30,7 +30,7 @@ Which is an array of JavaScript Objects containing the following fields:
 
 ## Local development
 
-* If you want to view changes made to the site or execute unit/acceptance tests, run `npm run build` to have `webpack` compile the files. The site and tests will then use the newest compiled files.
+* If you want to view changes made to the site or execute acceptance tests, run `npm run build:watch` to have `webpack` continuously compile the files. The site and tests will then use the newest compiled files.
 
 ### Requirements
 * Install [node](https://nodejs.org/en) using [nvm](https://github.com/nvm-sh/nvm)
