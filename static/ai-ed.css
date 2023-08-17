@@ -58,18 +58,18 @@ body {
 .navbar-menu.is-active {
     display: grid;
 }
-/* h1, h2, h3, p, a { */
-/* 	margin: 0; */
-/* } */
-/* h4 { */
-/* 	margin: 16px 0; */
-/* 	font-size: 10pt; */
-/* 	font-weight: 400; */
-/* } */
-/* hr { */
-/* 	border: 0; */
-/* 	border-bottom: 1px solid var(--ds); */
-/* } */
+h1, h2, h3, p, a {
+	margin: 0;
+}
+h4 {
+	margin: 16px 0;
+	font-size: 10pt;
+	font-weight: 400;
+}
+hr {
+	background-color: lightgray;
+  margin: 0.5rem;
+}
 /* header { */
 /* 	display: flex; */
 /* 	flex-direction: row; */
@@ -253,7 +253,7 @@ body {
 }
 a.secondary-btn, a.primary-btn {
 	height: 16px;
-	line-height: 16px;
+	line-height: 7px;
 	margin: 0 4px;
 	border: none;
 	border-radius: 16px;
@@ -285,14 +285,13 @@ a.primary-btn {
 		box-shadow ease 0.25s,
 		background-color ease 0.25s;
 }
-/*
+
 .resource:hover {
 	box-shadow:
-		0 0 0 4px var(--card-brdsel) /* ,
+		0 0 0 4px var(--card-brdsel)  ,
 		0 4px 16px #00000010 ;
-	background-color: var(--card-sel) /* var(--br) ;
+	background-color: var(--card-sel) var(--br) ;
 }
-*/
 .resource h1 {
 	font-size: 20pt;
 	font-weight: 700;
@@ -325,11 +324,11 @@ a.primary-btn {
 		position: relative;
 		width: 100vw;
 		max-width: 800px;
-		/* height: 56px; */
+		 height: 56px;
 		height: 0;
 	}
 	.col-filters .filters-toggle {
-		/* visibility: visible; */
+		 visibility: visible; 
 	}
 	.col-filters .filters-body {
 		visibility: hidden;
@@ -354,8 +353,8 @@ span.tag, span.tag-btn {
 	margin: 2px 4px;
 	border-radius: 12px;
 	padding: 6px 8px;
-	height: 12px;
-	line-height: 12px;
+	height: 17px;
+	line-height: 5px;
 	font-size: 10pt;
 	font-weight: 300;
 }
