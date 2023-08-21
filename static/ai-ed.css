@@ -56,7 +56,7 @@ body {
 }
 
 .filters {
-    margin: auto;
+    margin: 0 auto;
     gap: 2rem;
 }
 
