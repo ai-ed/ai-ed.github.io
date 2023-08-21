@@ -51,7 +51,8 @@ function getcol(seed) {
 // appends a resource element to this collection for every resource in res
 
 function populate(res) {
-	document.getElementById("info").innerHTML = `<p class="info">${res.length} resources loaded.</p>`;
+    const amountOfTools =  1;
+	document.getElementById("info").innerHTML = `<p class="info">${res.length} tools matching the filters found</p>`;
 	let flex = document.getElementById("resources");
 	// reset innerHTML of flex container
 	flex.innerHTML = "";
