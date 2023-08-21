@@ -60,6 +60,11 @@ body {
     gap: 2rem;
 }
 
+@media only screen and (max-width: 432px){
+    .filter {
+        display: grid;
+    }
+}
 .navbar-menu.is-active {
     display: grid;
 }
