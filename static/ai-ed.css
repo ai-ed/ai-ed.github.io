@@ -55,6 +55,11 @@ body {
     color: black;
 }
 
+.filters {
+    margin: auto;
+    gap: 2rem;
+}
+
 .navbar-menu.is-active {
     display: grid;
 }

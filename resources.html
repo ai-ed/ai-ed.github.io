@@ -15,27 +15,55 @@
 	<body>
 
       <div id="main-wrap" class="is-flex  is-flex-direction-column ">
-
+<div> filters </div>
+          <nav class="level filters">
+              <!-- <div class="container"> -->
+				          <div class="level-item">
+					            <label for="sort-by">Sort by</label>
+					            <select name="sort-by" id="sort-by">
+						              <option value="newest">Newest</option>
+						              <option value="oldest">Oldest</option>
+						              <option value="name">Name</option>
+					            </select>
+                      </div>
+				              <div class="level-item">
+					            <p>Filter by:</p>
+					            <div id="tags"></div>
+                      </div>
+			                <div class="level-item">
+					            <p id="info"></p>
+                      </div>
+                      <!-- </div> -->
+          </nav>
 		  <div id="root" class="cols">
-			<div class="col-filters">
-				<img src="static/filters.svg" class="filters-toggle" />
-				<div class="filters-body">
-					<h1>Filters</h1>
-					<hr>
-					<label for="sort-by">Sort by</label>
-					<select name="sort-by" id="sort-by">
-						<option value="newest">Newest</option>
-						<option value="oldest">Oldest</option>
-						<option value="name">Name</option>
-					</select>
-					<hr>
-					<p>Tags:</p>
-					<div id="tags"></div>
-					<hr>
-					<p id="info"></p>
-				</div>
-			</div>
-			<div  id="resources" class="col-resources"></div>
+			    <!-- <div class="col-filters">
+				       <div class="filters-body">
+					     <h1>Filters</h1>
+					     <hr>
+					     <label for="sort-by">Sort by</label>
+					     <select name="sort-by" id="sort-by">
+						   <option value="newest">Newest</option>
+						   <option value="oldest">Oldest</option>
+						   <option value="name">Name</option>
+					     </select>
+					     <hr>
+					     <p>Tags:</p>
+					     <div id="tags"></div>
+					     <hr>
+					     <p id="info"></p>
+				       </div>
+			         </div> -->
+			<div  id="resources" class="col-resources">
+          <nav class="level">
+              <div class="level-item has-text-centered">
+                  <div>
+                      <p class="heading">Tweets</p>
+                      <p class="title">3,456</p>
+                  </div>
+              </div>
+
+          </nav>
+      </div>
 		</div>
 		  </div>
 	</body>
