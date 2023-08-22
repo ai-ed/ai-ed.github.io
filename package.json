@@ -24,6 +24,7 @@
         "ramda": "^0.29.0"
     },
     "dependencies": {
+        "pluralize": "^8.0.0",
         "webpack": "^5.88.2",
         "webpack-cli": "^5.1.4"
     }

@@ -1,3 +1,5 @@
+// import * as pluralize from "pluralize";
+import Pluralize from 'pluralize'
 
 const MONTHS = [
 	"January",
@@ -51,8 +53,8 @@ function getcol(seed) {
 // appends a resource element to this collection for every resource in res
 
 function populate(res) {
-    const amountOfTools =  1;
-	document.getElementById("info").innerHTML = `<p class="info">${res.length} tools matching the filters found</p>`;
+    const amountOfTools =  Pluralize("tools", res.length, true);
+	document.getElementById("info").innerHTML = `<p class="info">${amountOfTools} matching the filters found</p>`;
 	let flex = document.getElementById("resources");
 	// reset innerHTML of flex container
 	flex.innerHTML = "";
