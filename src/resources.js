@@ -1,5 +1,5 @@
-// import * as pluralize from "pluralize";
 import Pluralize from 'pluralize'
+import * as Handlebars from "handlebars";
 
 const MONTHS = [
 	"January",
@@ -52,9 +52,12 @@ function getcol(seed) {
 // first finds the element to store resources (i.e <table>)
 // appends a resource element to this collection for every resource in res
 
+const matchingToolsCount = `<p class="info"> {{numOfTools}} matching the filters found </p>`;
+const matchingToolsTemplate = Handlebars.compile(matchingToolsCount);
+
 function populate(res) {
     const amountOfTools =  Pluralize("tools", res.length, true);
-	document.getElementById("info").innerHTML = `<p class="info">${amountOfTools} matching the filters found</p>`;
+	  document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
 	let flex = document.getElementById("resources");
 	// reset innerHTML of flex container
 	flex.innerHTML = "";
