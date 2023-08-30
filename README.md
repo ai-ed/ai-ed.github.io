@@ -40,7 +40,7 @@ Which is an array of JavaScript Objects containing the following fields:
 
 ### File structure
 
-Because the website uses [GitHub pages](https://pages.github.com/) for serving the site we decided to use [Jekyll](https://jekyllrb.com/) to generate the site. `Jekyll` is the tool used by GH pages and doesn't need extra setup.
+Because the website uses [GitHub pages](https://pages.github.com/) for serving the site we decided to use _Jekyll_ to generate the site. `Jekyll` is the tool used by GH pages and doesn't need extra setup.
 
 ```
 .
@@ -77,7 +77,7 @@ The _Jekyll_ server will then copy everything under `website` (ignoring all the 
 
 #### Creating HTML pages
 
-Jekyll will convert all the markdown files into HTML. To create an HTML page create a markdown file (.md) and add [front matter](https://jekyllrb.com/docs/front-matter/) to the file to specify the a layout. Here is an example using the _default_ layout:
+_Jekyll_ will convert all the markdown files into HTML. To create an HTML page create a markdown file (.md) and add [front matter](https://jekyllrb.com/docs/front-matter/) to the file to specify the a layout. Here is an example using the _default_ layout:
 
 ```md
 ---
