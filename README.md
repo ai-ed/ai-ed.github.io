@@ -70,9 +70,24 @@ The following commands will install the node and ruby dependencies.
 * Run `npm install`
 * Run `bundle`
 
-The next command will serve the site using _Jekyll_ at `http://localhost:3000/` and will update the browser when any changes are made.
+The next command will have [webpack](https://webpack.js.org/) continuously compile the files and output them in `website/dist`, and will start the Jekyll server at `http://localhost:3000/`.
+The _Jekyll_ server will then copy everything under `website` (ignoring all the folders that start with `_` like `_layouts`) to the `_site` folder and serve the files from there. It will also update the browser when the files have changed.
 
 * Run `npm run start`
+
+#### Creating HTML pages
+
+Jekyll will convert all the markdown files into HTML. To create an HTML page create a markdown file (.md) and add [front matter](https://jekyllrb.com/docs/front-matter/) to the file to specify the a layout. Here is an example using the _default_ layout:
+
+```md
+---
+layout: default
+---
+<div>
+  some more info here
+</div>
+```
+Layouts help avoid repeating code in each HTML. Please take a look a the _Jekyll_ [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) information for more details.
 
 ### Testing
 
