@@ -38,6 +38,31 @@ Which is an array of JavaScript Objects containing the following fields:
 * Install [ruby](https://www.ruby-lang.org/en/) using [rbenv](https://github.com/rbenv/rbenv)
 * Install [bundler](https://bundler.io/) by running `gem install bundler`
 
+### File structure
+
+Because the website uses [GitHub pages](https://pages.github.com/) for serving the site we decided to use [Jekyll](https://jekyllrb.com/) to generate the site. `Jekyll` is the tool used by GH pages and doesn't need extra setup.
+
+```
+.
+├── Gemfile                   # Dependencies list for Ruby
+├── Gemfile.lock              # Lock file for Ruby dependencies
+├── Procfile                  # Foreman uses the file to start Jekyll and Webpack to serve the files and watch
+├── README.md
+├── _config.yml               # Configuration for Jekyll
+├── babel.config.json         # Babel configuration for Webpack
+├── jest.config.js            # Configuration to run tests with jest
+├── package.json              # Node dependencies
+├── package-lock.json         # Lock file for Node dependencies
+├── src                       # Javascript source files (used by Webpack to compile into website/dist)
+├── tests                     # Unit tests and acceptance tests
+├── webpack.config.cjs        # Configuration for Webpack to know where to output the compiled files, etc...
+└── website                   # Contains all the website files (.md files, etc)
+    ├── _layouts              # Jekyll uses the folder for [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) for HTML pages
+    ├── dist                  # Webpack compiles all the JS into this folder
+    ├── resources.json        # JSON file with all the resources to show
+    └── static                # Static assets folder (images, svg, css, etc)
+```
+
 ### Serving site on watch mode
 
 The following commands will install the node and ruby dependencies.
