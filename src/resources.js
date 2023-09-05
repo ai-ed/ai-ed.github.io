@@ -79,11 +79,11 @@ function populate(res) {
 </h2>
 			</div>
 				  <h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
-				  <p>${r.blurb}</p>
+				  <p class="is-clipped blurb">${r.blurb}</p>
 				  <h4>${tags}</h4>
 				  <div class="buttons">
 					<a class="button is-rounded" href="${r.link}">Visit &nearr;</a>
-					<a class="button is-rounded" href="/resources.html?r=${i}">Learn More</a>
+					<a class="button is-rounded has-text-white article-btn" href="/resources.html?r=${i}">Learn More</a>
 				  </div>
           </div>
 		`;

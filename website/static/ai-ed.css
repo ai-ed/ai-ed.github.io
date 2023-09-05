@@ -16,6 +16,16 @@
     background-color: var(--lt);
 }
 
+.article-btn {
+    	background-color: var(--br);
+}
+
+.blurb {
+    width: 365px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 #resources {
     gap: 1rem;
 }
