@@ -20,8 +20,9 @@ layout: default
                           <p id="info"></p>
                 </div>
     </nav>
-    <div id="root" class="cols">
-      <div  id="resources" class="col-resources">
-</div>
+
+      <div  id="resources" class="is-flex-wrap-wrap is-flex" >
+<!--     <div id="root" class="cols"> -->
+<!-- </div> -->
   </div>
     </div>

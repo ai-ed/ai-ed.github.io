@@ -68,21 +68,22 @@ function populate(res) {
 		for (let i = 0; i < r.tags.length; i++)
 			tags += `${r.tags[i]}${i == r.tags.length - 1 ? "." : ", "}`;
 
+
 		flex.innerHTML += `
-			<div class="resource">
-				<h1>${r.name}</h1>
-				${
-					r.affiliated == r.name ? "" :
-					"<h2>" + r.affiliated + "</h2>"
-				}
-				<h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
-				<p>${r.blurb}</p>
-				<h4>${tags}</h4>
-				<div class="buttons">
-					<a class="secondary-btn" href="${r.link}">Visit &nearr;</a>
-					<a class="primary-btn" href="/resources.html?r=${i}">Learn More</a>
-				</div>
+          <div class="card">
+          <div class="card-content">
+			    <div>
+				  <h1>${r.name}</h1>
+				  ${r.affiliated == r.name ? "" : "<h2>" + r.affiliated + "</h2>"}
 			</div>
+				  <h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
+				  <p>${r.blurb}</p>
+				  <h4>${tags}</h4>
+				  <div class="buttons">
+					<a class="button" href="${r.link}">Visit &nearr;</a>
+					<a class="primary-btn" href="/resources.html?r=${i}">Learn More</a>
+				  </div>
+          </div>
 		`;
 	}
 }
