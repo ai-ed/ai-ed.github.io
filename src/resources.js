@@ -83,8 +83,8 @@ function populate(res) {
           <div class="card ai-tool">
           <div class="card-content is-flex is-flex-direction-column ai-tool-content">
 			    <div>
-				  <h1>${r.name}</h1>
-<h2>
+				  <h1 class="has-text-weight-bold is-size-3">${r.name}</h1>
+<h2 class="has-text-weight-semibold is-size-4">
   ${r.affiliated == r.name ? "&nbsp;" : r.affiliated}
 </h2>
 			</div>
@@ -92,8 +92,8 @@ function populate(res) {
 				  <p class="is-clipped blurb" onClick="hideOrShowText(this)">${r.blurb}</p>
 				  <h4>${tags}</h4>
 				  <div class="buttons">
-					<a class="button is-rounded" href="${r.link}">Visit &nearr;</a>
-					<a class="button is-rounded has-text-white article-btn" href="/resources.html?r=${i}">Learn More</a>
+					<a class="button is-rounded is-link" href="${r.link}">Visit &nearr;</a>
+					<a class="button is-rounded has-text-white is-info" href="/resources.html?r=${i}">Learn More</a>
 				  </div>
           </div>
 		`;
