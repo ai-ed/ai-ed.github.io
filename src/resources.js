@@ -55,6 +55,16 @@ function getcol(seed) {
 const matchingToolsCount = `<p class="info"> {{numOfTools}} matching the filters found </p>`;
 const matchingToolsTemplate = Handlebars.compile(matchingToolsCount);
 
+
+
+function hideOrShowText(text) {
+    let whiteSpaceConfig = text.style.whiteSpace;
+    console.log("The text has been clicked");
+    text.classList.toggle("is-clipped");
+    text.style.whiteSpace = text.classList.contains("is-clipped") ?  "nowrap" : "normal";
+    console.log("this is the txt", whiteSpaceConfig);
+};
+
 function populate(res) {
     const amountOfTools =  Pluralize("tools", res.length, true);
 	  document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
@@ -79,7 +89,7 @@ function populate(res) {
 </h2>
 			</div>
 				  <h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
-				  <p class="is-clipped blurb">${r.blurb}</p>
+				  <p class="is-clipped blurb" onClick="hideOrShowText(this)">${r.blurb}</p>
 				  <h4>${tags}</h4>
 				  <div class="buttons">
 					<a class="button is-rounded" href="${r.link}">Visit &nearr;</a>

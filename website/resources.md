@@ -1,7 +1,12 @@
 ---
 layout: default
 ---
-
+<script>
+function hideOrShowText(text) {
+    text.classList.toggle("is-clipped");
+    text.style.whiteSpace = text.classList.contains("is-clipped") ?  "nowrap" : "normal";
+}
+</script>
 <div id="main-wrap" class="is-flex  is-flex-direction-column ">
     <nav class="level filters">
                     <div class="filter level-item">
