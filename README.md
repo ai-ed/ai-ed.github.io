@@ -40,8 +40,6 @@ Which is an array of JavaScript Objects containing the following fields:
 
 
 ### File structure 
-
-
 Because the website uses [GitHub pages](https://pages.github.com/) for serving the site we decided to use _Jekyll_ to generate the site. `Jekyll` is the tool used by GH pages and doesn't need extra setup.
 
 ```
@@ -93,7 +91,6 @@ layout: default
 </div>
 ```
 Layouts help avoid repeating code in each HTML. Please take a look a the _Jekyll_ [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) information for more details.
-
 
 #### Adding custom styles
 
