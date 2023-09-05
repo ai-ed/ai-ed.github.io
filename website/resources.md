@@ -21,7 +21,7 @@ layout: default
                 </div>
     </nav>
 
-      <div  id="resources" class="is-flex-wrap-wrap is-flex" >
+      <div  id="resources" class="is-flex-wrap-wrap is-flex is-justify-content-center" >
 <!--     <div id="root" class="cols"> -->
 <!-- </div> -->
   </div>

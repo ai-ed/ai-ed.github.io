@@ -76,7 +76,17 @@ body {
     .filter {
         display: grid;
     }
+    .ai-tool {
+        flex-basis: 51%; 
+    }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 1023px) {
+.ai-tool {
+    flex-basis: 40%; 
+}
+}
+
 .navbar-menu.is-active {
     display: grid;
 }
