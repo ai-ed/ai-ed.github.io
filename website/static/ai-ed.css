@@ -16,6 +16,18 @@
     background-color: var(--lt);
 }
 
+#resources {
+    gap: 1rem;
+}
+
+.ai-tool-content {
+    gap: 1rem;
+}
+
+.ai-tool {
+    flex-basis: 30%;
+}
+
 .header {
     margin: auto;
     align-items: center;

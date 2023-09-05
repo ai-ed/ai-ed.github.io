@@ -70,8 +70,8 @@ function populate(res) {
 
 
 		flex.innerHTML += `
-          <div class="card">
-          <div class="card-content">
+          <div class="card ai-tool">
+          <div class="card-content is-flex is-flex-direction-column ai-tool-content">
 			    <div>
 				  <h1>${r.name}</h1>
 				  ${r.affiliated == r.name ? "" : "<h2>" + r.affiliated + "</h2>"}
@@ -79,9 +79,9 @@ function populate(res) {
 				  <h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
 				  <p>${r.blurb}</p>
 				  <h4>${tags}</h4>
-				  <div class="buttons are-rounded">
-					<a class="button" href="${r.link}">Visit &nearr;</a>
-					<a class="button" href="/resources.html?r=${i}">Learn More</a>
+				  <div >
+					<a class="button is-rounded" href="${r.link}">Visit &nearr;</a>
+					<a class="button is-rounded" href="/resources.html?r=${i}">Learn More</a>
 				  </div>
           </div>
 		`;
