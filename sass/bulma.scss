@@ -5,11 +5,12 @@ $article-link: #a0a0e8;
 
 $link: $site-link;
 $info: $article-link;
+
 @import "../node_modules/bulma/bulma.sass";
 
+$tool-background:  #f4f4f8;
 $addColors: (
-    "site-link":($site-link),
-    "article-link": ($article-link)
+    "tool-background":($tool-background)
 ); 
 $colors: map-merge($colors, $addColors);
 

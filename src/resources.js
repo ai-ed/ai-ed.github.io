@@ -67,7 +67,7 @@ function hideOrShowText(text) {
 
 function populate(res) {
     const amountOfTools =  Pluralize("tools", res.length, true);
-	  document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
+    document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
 	let flex = document.getElementById("resources");
 	// reset innerHTML of flex container
 	flex.innerHTML = "";
@@ -76,9 +76,8 @@ function populate(res) {
 		let r = res[i];
 		let tags = "Tags: ";
 		for (let i = 0; i < r.tags.length; i++)
-			tags += `${r.tags[i]}${i == r.tags.length - 1 ? "." : ", "}`;
-
-
+        console.log(r.tags);
+			tags += r.tags.join(", ");
 		flex.innerHTML += `
           <div class="card ai-tool">
           <div class="card-content is-flex is-flex-direction-column ai-tool-content">
