@@ -1,0 +1,77 @@
+---
+# This is necessary for Jekyll to pick up the file
+---
+
+@charset "utf-8";
+
+$site-link: #e8e8ff;
+$article-link: #a0a0e8;
+
+$link: $site-link;
+$info: $article-link;
+
+
+@import "sass/utilities/derived-variables";
+
+
+// $tool-background:  #f4f4f8;
+$tool-background:  #ff0000;
+$addColors: (
+    "tool-background":($tool-background, $tool-background)
+);
+
+$orchid-pink: #F4BBD3;
+$amethyst: #7D70BA;
+
+$colors: map-merge($colors, $addColors);
+
+@import "bulma.sass";
+
+:root {
+    --my-color: $site-link
+	  --fg: #181818;
+	  --bg: #f8f8f8;
+	  --mg: #8080a0;
+	  --lt: #e0e0f0;
+	  --ds: #e0e0e0;
+	  --br: #e8e8ff;
+
+	  --card:        #F1E4F3;
+	  --card-sel:    #f0f0f8;
+	  --card-border: #d4d4d8;
+	  --card-brdsel: #d8d8e0;
+}
+
+.ai-tool {
+    border-radius: 30px;
+    background-color: var(--card);
+    border: 1px solid $amethyst;
+}
+
+@include mobile {
+    .filter {
+        display: grid;
+    }
+    .ai-tool {
+        flex-basis: 51%; 
+    }
+    #resources {
+        padding: 0 20px;
+    }
+}
+
+@include tablet {
+    .ai-tool {
+        flex-basis: 40%; 
+    }
+}
+
+
+@include desktop {
+    .ai-tool {
+        flex-basis: 30%;
+        border-radius: 30px;
+        background-color: var(--card);
+    }
+}
+
