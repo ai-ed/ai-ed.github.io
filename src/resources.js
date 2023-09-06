@@ -15,6 +15,7 @@ const MONTHS = [
 	"November",
 	"December"
 ];
+
 /* Headers for a table of resources
 const HEADERS = `
 	<tr>
@@ -55,8 +56,6 @@ function getcol(seed) {
 const matchingToolsCount = `<p class="info"> {{numOfTools}} matching the filters found </p>`;
 const matchingToolsTemplate = Handlebars.compile(matchingToolsCount);
 
-
-
 function hideOrShowText(text) {
     text.classList.toggle("is-clipped");
     text.style.whiteSpace = text.classList.contains("is-clipped") ?  "nowrap" : "normal";
@@ -82,62 +81,38 @@ function hideOrShowText(text) {
 // `
 
 
-// const tools = `{{#each tool in tools}}
-//     <div class="card ai-tool">
-//     <div class="card-content is-flex is-flex-direction-column ai-tool-content">
-// 		<div>
-// 		<h1 class="has-text-weight-bold is-size-3"> {{name}} </h1>
-//     <h2 class="has-text-weight-semibold is-size-4">
-//     {{affiliated}} == {{name}} ? "&nbsp;" : {{affiliated}}
-// </h2>
-// 		</div>
-//     <h3>MONTHS[{{date}}.[1] - 1] {{date}}.[0]</h3>
-// 		<p class="is-clipped blurb" onClick="hideOrShowText(this)"> {{blurb}} </p>
-// 		<h4> {{tags}} </h4>
-// 		<div class="buttons">
-// 		<a class="button is-rounded is-link" href={{r.link}}>Visit &nearr;</a>
-// 		<a class="button is-rounded has-text-white is-info" href="/resources.html?r=${i}">Learn More</a>
-// 		</div>
-//     </div>
-// {{/each}}
-// `;
+const tools = `
+{{#each tools}}
+    <div class="card ai-tool">
+        <div class="card-content is-flex is-flex-direction-column ai-tool-content">
+            <div>
+                <h1 class="has-text-weight-bold is-size-3"> {{this.name}} </h1>
+                <h2 class="has-text-weight-semibold is-size-4"> {{this.affiliated}} </h2>
+            </div>
+            <h3>{{this.dateWithMonth}}</h3>
+            <p class="is-clipped blurb" onClick="hideOrShowText(this)"> {{this.blurb}} </p>
+            <h4>Tags: {{this.tagsFullList}} </h4>
+            <div class="buttons">
+                <a class="button is-rounded is-link" href={{this.link}}>Visit &nearr;</a>
+                <a class="button is-rounded has-text-white is-info" href="/resources.html?r=0">Learn More</a>
+            </div>
+        </div>
+    </div>
+{{/each}}
+`;
 
-// const toolsTemplate = Handlebars.compile(tools)
-
-// const toolTemplate = Handlebars.compile(toolAppearance);
+const toolsTemplate = Handlebars.compile(tools)
 
 function populate(res) {
     const amountOfTools =  Pluralize("tools", res.length, true);
     document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
-	let flex = document.getElementById("resources");
-	// reset innerHTML of flex container
-	flex.innerHTML = "";
+    // reset innerHTML of flex container
 
-	for (let i = 0; i < res.length; i++) {
-		let r = res[i];
-		let tags = "Tags: ";
-		for (let i = 0; i < r.tags.length; i++)
-        console.log(r.tags);
-      tags += r.tags.join(", ");
-		  flex.innerHTML += 
-`<div class="card ai-tool">
-          <div class="card-content is-flex is-flex-direction-column ai-tool-content">
-			    <div>
-				  <h1 class="has-text-weight-bold is-size-3">${r.name} <i class="fa fa-link fa-xs"></i></h1>
-<h2 class="has-text-weight-semibold is-size-4">
-  ${r.affiliated == r.name ? "&nbsp;" : r.affiliated}
-</h2>
-			</div>
-				  <h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
-				  <p class="is-clipped blurb" onClick="hideOrShowText(this)">${r.blurb}</p>
-				  <h4>${tags}</h4>
-				  <div class="buttons">
-					<a class="button is-rounded is-link" href="${r.link}">Visit &nearr;</a>
-					<a class="button is-rounded has-text-white is-info" href="/resources.html?r=${i}">Learn More</a>
-				  </div>
-          </div>`
-;
-	}
+    res.forEach(r => {
+        r.tagsFullList = "" ; //r.tags.join(", ");
+        r.dateWithMonth = `${MONTHS[r.date[1] - 1]} ${r.date[0]}`
+    })
+    document.getElementById("resources").innerHTML = toolsTemplate({ tools: res }) ;
 }
 
 function populateSingle(res, r_id) {
