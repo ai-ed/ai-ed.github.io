@@ -10,7 +10,7 @@ function hideOrShowText(text) {
 <div id="main-wrap" class="is-flex  is-flex-direction-column ">
     <nav class="level filters">
                     <div class="filter level-item">
-                <div class="tag is-size-6"> Sort by </div>
+                <div class="tag is-size-6 is-white"> Sort by </div>
                           <select name="sort-by" id="sort-by">
                                 <option value="newest">Newest</option>
                                 <option value="oldest">Oldest</option>

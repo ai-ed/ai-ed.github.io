@@ -9,22 +9,13 @@ $article-link: #a0a0e8;
 $link: #01BAEF;
 $info: $article-link;
 @import "sass/utilities/derived-variables";
-
-$tool-background:  #ff0000;
-$addColors: (
-    "tool-background":($tool-background, $tool-background)
-);
-
 $orchid-pink: #F4BBD3;
 $amethyst: #7D70BA;
 $black-olive: #343633;
 $tag-filter: #DAF7DC;
-$colors: map-merge($colors, $addColors);
-
 @import "bulma.sass";
 
 :root {
-    --my-color: $site-link;
 	  --fg: #181818;
 	  --bg: #f8f8f8;
 	  --mg: #8080a0;
@@ -124,34 +115,21 @@ html {
     height: 100%
 }
 
-body {
-	margin: 0;
-	background-color: var(--bg);
-	color: var(--fg);
-	font-family: "Inter", sans-serif;
-  height: 100%;
-}
-
 #main-wrap {
     height: 100%;
 }
-
-
 .welcome-container {
     padding-bottom: 5rem;
 }
-
 .welcome-msg {
     font-size: 4rem;
     font-weight: 900;
     color: black;
 }
-
 .filters {
     margin: 0 auto;
     gap: 2rem;
 }
-
 .navbar-menu.is-active {
     display: grid;
 }
