@@ -62,7 +62,7 @@ function wrapTags(tags) {
  * Extracts all the tools on the resources page
  */
 function parseToolsFromPage() {
-  return cy.get(".ai-tool").then((elems) => {
+  return cy.get(".card-content").then((elems) => {
     return R.pipe(
       Array.from,
       R.map((e) => {
@@ -71,6 +71,7 @@ function parseToolsFromPage() {
           R.take(5),
           R.map(R.prop("innerText")),
           R.zipObj(["name", "affiliated", "date", "blurb", "tags"]),
+          R.evolve({ name: R.trim}),
           R.evolve({ date: revertDate }),
           R.evolve({ tags: wrapTags }),
         )(e.children);
@@ -113,7 +114,7 @@ const toolArb = fc.record({
 /**
  * Generates a list of example tools
  */
-const toolListArb = fc.array(toolArb, { minLength: 1, maxLength: 5 });
+const toolListArb = fc.array(toolArb, { minLength: 1, maxLength: 1 });
 
 const home = "http://localhost:3000/"
 

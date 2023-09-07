@@ -66,13 +66,11 @@ const tools = `
 {{#each tools}}
     <div class="card ai-tool">
         <div class="card-content is-flex is-flex-direction-column ai-tool-content">
-            <div>
                 <h1 class="has-text-weight-bold is-size-3">
                     <a href="/resources.html?r=0" title="Learn more about this tool">{{this.name}}</a>
-                    <a href={{this.link}} title="Visit website"> <i class="fa fa-link fa-xs"></i></a>
+                    <a href={{this.link}} title="Visit website"><i class="fa fa-link fa-xs"></i></a>
                 </h1>
                 <h2 class="has-text-weight-semibold is-size-4"> {{this.affiliated}} </h2>
-            </div>
             <h3>{{this.dateWithMonth}}</h3>
             <p class="is-clipped blurb" onClick="hideOrShowText(this)"> {{this.blurb}} </p>
             <h4>Tags: {{this.tagsFullList}} </h4>
