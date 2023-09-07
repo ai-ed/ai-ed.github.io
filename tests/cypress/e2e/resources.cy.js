@@ -62,7 +62,7 @@ function wrapTags(tags) {
  * Extracts all the tools on the resources page
  */
 function parseToolsFromPage() {
-  return cy.get(".resource").then((elems) => {
+  return cy.get(".ai-tool").then((elems) => {
     return R.pipe(
       Array.from,
       R.map((e) => {
