@@ -61,41 +61,21 @@ function hideOrShowText(text) {
     text.style.whiteSpace = text.classList.contains("is-clipped") ?  "nowrap" : "normal";
 };
 
-// const toolAppearance = `
-//           <div class="card ai-tool">
-//           <div class="card-content is-flex is-flex-direction-column ai-tool-content">
-// 			    <div>
-// 				  <h1 class="has-text-weight-bold is-size-3"> {{name}} </h1>
-// <h2 class="has-text-weight-semibold is-size-4">
-//   {{affiliated}} == {{name}} ? "&nbsp;" : {{affiliated}}
-// </h2>
-// 			</div>
-// 				  <h3>MONTHS[{{date}}.[1] - 1] {{date}}.[0]</h3>
-// 				  <p class="is-clipped blurb" onClick="hideOrShowText(this)"> {{blurb}} </p>
-// 				  <h4> {{tags}} </h4>
-// 				  <div class="buttons">
-// 					<a class="button is-rounded is-link" href={{r.link}}>Visit &nearr;</a>
-// 					<a class="button is-rounded has-text-white is-info" href="/resources.html?r=${i}">Learn More</a>
-// 				  </div>
-//           </div>
-// `
-
 
 const tools = `
 {{#each tools}}
     <div class="card ai-tool">
         <div class="card-content is-flex is-flex-direction-column ai-tool-content">
             <div>
-                <h1 class="has-text-weight-bold is-size-3"> {{this.name}} </h1>
+                <h1 class="has-text-weight-bold is-size-3">
+                    <a href="/resources.html?r=0" title="Learn more about this tool">{{this.name}}</a>
+                    <a href={{this.link}} title="Visit website"> <i class="fa fa-link fa-xs"></i></a>
+                </h1>
                 <h2 class="has-text-weight-semibold is-size-4"> {{this.affiliated}} </h2>
             </div>
             <h3>{{this.dateWithMonth}}</h3>
             <p class="is-clipped blurb" onClick="hideOrShowText(this)"> {{this.blurb}} </p>
             <h4>Tags: {{this.tagsFullList}} </h4>
-            <div class="buttons">
-                <a class="button is-rounded is-link" href={{this.link}}>Visit &nearr;</a>
-                <a class="button is-rounded has-text-white is-info" href="/resources.html?r=0">Learn More</a>
-            </div>
         </div>
     </div>
 {{/each}}
@@ -106,10 +86,9 @@ const toolsTemplate = Handlebars.compile(tools)
 function populate(res) {
     const amountOfTools =  Pluralize("tools", res.length, true);
     document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
-    // reset innerHTML of flex container
 
     res.forEach(r => {
-        r.tagsFullList = "" ; //r.tags.join(", ");
+        r.tagsFullList = r.tags.join(", ");
         r.dateWithMonth = `${MONTHS[r.date[1] - 1]} ${r.date[0]}`
     })
     document.getElementById("resources").innerHTML = toolsTemplate({ tools: res }) ;

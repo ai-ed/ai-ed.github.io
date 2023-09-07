@@ -22,6 +22,7 @@ $addColors: (
 
 $orchid-pink: #F4BBD3;
 $amethyst: #7D70BA;
+$black-olive: #343633;
 
 $colors: map-merge($colors, $addColors);
 
@@ -38,14 +39,25 @@ $colors: map-merge($colors, $addColors);
 
 	  --card:        #F1E4F3;
 	  --card-sel:    #f0f0f8;
-	  --card-border: #d4d4d8;
+	  --card-border:#{$amethyst};
 	  --card-brdsel: #d8d8e0;
 }
 
 .ai-tool {
     border-radius: 30px;
     background-color: var(--card);
-    border: 1px solid $amethyst;
+    border: 1px solid var(--card-border);
+    color: $black-olive;
+
+    a {
+        color: $black-olive;
+    }
+
+    .card-content {
+        h1 .fa-link {
+            font-size: .8rem;
+        }
+    }
 }
 
 @include mobile {
