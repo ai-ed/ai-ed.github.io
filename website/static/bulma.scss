@@ -6,15 +6,10 @@
 
 $site-link: #e8e8ff;
 $article-link: #a0a0e8;
-
-$link: $site-link;
+$link: #01BAEF;
 $info: $article-link;
-
-
 @import "sass/utilities/derived-variables";
 
-
-// $tool-background:  #f4f4f8;
 $tool-background:  #ff0000;
 $addColors: (
     "tool-background":($tool-background, $tool-background)
@@ -23,20 +18,19 @@ $addColors: (
 $orchid-pink: #F4BBD3;
 $amethyst: #7D70BA;
 $black-olive: #343633;
-
+$tag-filter: #DAF7DC;
 $colors: map-merge($colors, $addColors);
 
 @import "bulma.sass";
 
 :root {
-    --my-color: $site-link
+    --my-color: $site-link;
 	  --fg: #181818;
 	  --bg: #f8f8f8;
 	  --mg: #8080a0;
 	  --lt: #e0e0f0;
 	  --ds: #e0e0e0;
 	  --br: #e8e8ff;
-
 	  --card:        #F1E4F3;
 	  --card-sel:    #f0f0f8;
 	  --card-border:#{$amethyst};
@@ -58,6 +52,15 @@ $colors: map-merge($colors, $addColors);
             font-size: .8rem;
         }
     }
+}
+
+.tag-filter {
+    @extend .is-dark;
+    text-decoration: none;
+}
+
+.filter-tags {
+    gap: 0.5rem;
 }
 
 @include mobile {
@@ -157,31 +160,6 @@ hr {
   margin: 0.5rem;
 }
 
-span.tag, span.tag-btn {
-	display: inline-block;
-	margin: 2px 4px;
-	border-radius: 12px;
-	padding: 6px 8px;
-	height: 17px;
-	line-height: 5px;
-	font-size: 10pt;
-	font-weight: 300;
-}
-span.tag {
-	margin: 2px 0;
-	margin-right: 4px;
-	border: 1px solid var(--fg);
-	background-color: var(--lt);
-	font-weight: 400;
-}
-span.tag-btn {
-	background-color: var(--ds);
-}
-span.tag-btn:hover {
-	cursor: pointer;
-}
-span.tag-btn.enabled {
-	box-shadow: 0 0 0 1px var(--lt);
-	background-color: var(--br);
-	font-weight: 400;
+#tags {
+    gap: 0.3rem;
 }

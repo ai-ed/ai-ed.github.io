@@ -17,9 +17,9 @@ function hideOrShowText(text) {
                                 <option value="name">Name</option>
                           </select>
                 </div>
-                        <div class="filter level-item">
+                        <div class="filter level-item filter-tags">
                           <p class="has-text-centered">Filter by</p>
-                          <div id="tags"></div>
+                          <div id="tags" class="is-flex"></div>
                 </div>
                       <div class="level-item">
                           <p id="info"></p>

@@ -219,8 +219,14 @@ export const renderTools = async () => {
 
 				// create tag button
 				// Eg: <span id="tag-btn">Chat</span>
-				let e = document.createElement("span");
-				e.classList.add("tag-btn");
+				let e = document.createElement("a");
+				e.classList.add("tag");
+				e.classList.add("tag-filter");
+
+				/*
+                                e.classList.add("is-rounded");
+                                e.classList.add("is-small");
+                */
 				e.innerHTML = t;
 
 				// when tag button is clicked

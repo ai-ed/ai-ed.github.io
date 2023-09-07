@@ -114,7 +114,7 @@ const toolArb = fc.record({
 /**
  * Generates a list of example tools
  */
-const toolListArb = fc.array(toolArb, { minLength: 1, maxLength: 1 });
+const toolListArb = fc.array(toolArb, { minLength: 1, maxLength: 5 });
 
 const home = "http://localhost:3000/"
 
