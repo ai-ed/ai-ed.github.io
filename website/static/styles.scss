@@ -16,16 +16,9 @@ $tag-filter: #DAF7DC;
 @import "bulma.sass";
 
 :root {
-	  --fg: #181818;
-	  --bg: #f8f8f8;
-	  --mg: #8080a0;
 	  --lt: #e0e0f0;
-	  --ds: #e0e0e0;
-	  --br: #e8e8ff;
 	  --card:        #F1E4F3;
-	  --card-sel:    #f0f0f8;
 	  --card-border:#{$amethyst};
-	  --card-brdsel: #d8d8e0;
 }
 
 html, body {
