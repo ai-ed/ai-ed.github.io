@@ -28,6 +28,10 @@ $tag-filter: #DAF7DC;
 	  --card-brdsel: #d8d8e0;
 }
 
+html, body {
+    height: 100%;
+}
+
 .ai-tool {
     border-radius: 30px;
     background-color: var(--card);
