@@ -222,11 +222,6 @@ export const renderTools = async () => {
 				let e = document.createElement("a");
 				e.classList.add("tag");
 				e.classList.add("tag-filter");
-
-				/*
-                                e.classList.add("is-rounded");
-                                e.classList.add("is-small");
-                */
 				e.innerHTML = t;
 
 				// when tag button is clicked
