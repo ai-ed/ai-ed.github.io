@@ -1,0 +1,140 @@
+---
+# This is necessary for Jekyll to pick up the file
+---
+
+@charset "utf-8";
+
+$site-link: #e8e8ff;
+$article-link: #a0a0e8;
+$link: #01BAEF;
+$info: $article-link;
+@import "sass/utilities/derived-variables";
+$orchid-pink: #F4BBD3;
+$amethyst: #7D70BA;
+$black-olive: #343633;
+$tag-filter: #DAF7DC;
+@import "bulma.sass";
+
+:root {
+	  --lt: #e0e0f0;
+	  --card:        #F1E4F3;
+	  --card-border:#{$amethyst};
+}
+
+html, body {
+    height: 100%;
+}
+
+.ai-tool {
+    border-radius: 30px;
+    background-color: var(--card);
+    border: 1px solid var(--card-border);
+    color: $black-olive;
+
+    a {
+        color: $black-olive;
+    }
+
+    .card-content {
+        h1 .fa-link {
+            font-size: .8rem;
+        }
+    }
+}
+
+.tag-filter {
+    @extend .is-dark;
+    text-decoration: none;
+}
+
+.filter-tags {
+    gap: 0.5rem;
+}
+
+@include mobile {
+    .filter {
+        display: grid;
+    }
+    .ai-tool {
+        flex-basis: 51%; 
+    }
+    #resources {
+        padding: 0 20px;
+    }
+}
+
+@include tablet {
+    .ai-tool {
+        flex-basis: 40%; 
+    }
+}
+
+
+@include desktop {
+    .ai-tool {
+        flex-basis: 30%;
+        border-radius: 30px;
+        background-color: var(--card);
+    }
+}
+
+.button {
+    background-color: var(--lt);
+}
+
+.blurb {
+    width: 365px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#resources {
+    gap: 1rem;
+}
+
+.ai-tool-content {
+    gap: 1rem;
+}
+
+.header {
+    margin: auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    background: transparent;
+}
+
+.header-items {
+    gap: 1rem;
+}
+
+html {
+    height: 100%
+}
+
+#main-wrap {
+    height: 100%;
+}
+.welcome-container {
+    padding-bottom: 5rem;
+}
+.welcome-msg {
+    font-size: 4rem;
+    font-weight: 900;
+    color: black;
+}
+.filters {
+    margin: 0 auto;
+    gap: 2rem;
+}
+.navbar-menu.is-active {
+    display: grid;
+}
+hr {
+	background-color: lightgray;
+  margin: 0.5rem;
+}
+
+#tags {
+    gap: 0.3rem;
+}

@@ -38,7 +38,9 @@ Which is an array of JavaScript Objects containing the following fields:
 * Install [ruby](https://www.ruby-lang.org/en/) using [rbenv](https://github.com/rbenv/rbenv)
 * Install [bundler](https://bundler.io/) by running `gem install bundler`
 
-### File structure
+
+### File structure 
+
 
 Because the website uses [GitHub pages](https://pages.github.com/) for serving the site we decided to use _Jekyll_ to generate the site. `Jekyll` is the tool used by GH pages and doesn't need extra setup.
 
@@ -59,8 +61,10 @@ Because the website uses [GitHub pages](https://pages.github.com/) for serving t
 └── website                   # Contains all the website files (.md files, etc)
     ├── _layouts              # Jekyll uses the folder for [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) for HTML pages
     ├── dist                  # Webpack compiles all the JS into this folder
+    ├── _sass                # Jekyll uses this folder to style the site, converting [Sass](https://sass-lang.com/) files to css files.
     ├── resources.json        # JSON file with all the resources to show
     └── static                # Static assets folder (images, svg, css, etc)
+
 ```
 
 ### Serving site on watch mode
@@ -69,6 +73,7 @@ The following commands will install the node and ruby dependencies.
 
 * Run `npm install`
 * Run `bundle`
+
 
 The next command will have [webpack](https://webpack.js.org/) continuously compile the files and output them in `website/dist`, and will start the Jekyll server at `http://localhost:3000/`.
 The _Jekyll_ server will then copy everything under `website` (ignoring all the folders that start with `_` like `_layouts`) to the `_site` folder and serve the files from there. It will also update the browser when the files have changed.
@@ -88,6 +93,12 @@ layout: default
 </div>
 ```
 Layouts help avoid repeating code in each HTML. Please take a look a the _Jekyll_ [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) information for more details.
+
+
+#### Adding custom styles
+
+The website uses [Sass](https://sass-lang.com/) and [Bulma](https://bulma.io/) for the styling of the site. If you want to change the styles go to `website/static/styles.scss`. This file contains a mix of Sass and plain CSS. 
+**Note**: If you want to change any of Bulma's [initial variables](https://github.com/jgthms/bulma/blob/master/sass/utilities/initial-variables.sass), override them before the line which says `@import "bulma.sass"`.
 
 ### Testing
 
