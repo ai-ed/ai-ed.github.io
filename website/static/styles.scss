@@ -13,12 +13,14 @@ $orchid-pink: #F4BBD3;
 $amethyst: #7D70BA;
 $black-olive: #343633;
 $tag-filter: #DAF7DC;
+$card-hover: #CC59D2;
 @import "bulma.sass";
 
 :root {
 	  --lt: #e0e0f0;
 	  --card:        #F1E4F3;
 	  --card-border:#{$amethyst};
+    --card-hover: #{$card-hover};
 }
 
 html, body {
@@ -29,8 +31,8 @@ html, body {
     border-radius: 30px;
     background-color: var(--card);
     border: 1px solid var(--card-border);
+    border-color: darken($orchid-pink, 40%);
     color: $black-olive;
-
     a {
         color: $black-olive;
     }
@@ -38,6 +40,15 @@ html, body {
     .card-content {
         h1 .fa-link {
             font-size: .8rem;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: darken($orchid-pink, 40%);
+        border-color: $black-olive;
+        color: ivory;
+        a {
+            color: ivory;
         }
     }
 }

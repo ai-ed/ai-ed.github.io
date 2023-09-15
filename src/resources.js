@@ -64,7 +64,7 @@ function hideOrShowText(text) {
 
 const tools = `
 {{#each tools}}
-    <div class="card ai-tool">
+    <div class="card ai-tool" onClick="window.location='{{this.link}}'">
         <div class="card-content is-flex is-flex-direction-column ai-tool-content">
                 <h1 class="has-text-weight-bold is-size-3">
                     <a href="/resources.html?r=0" title="Learn more about this tool">{{this.name}}</a>
