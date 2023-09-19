@@ -56,18 +56,12 @@ function getcol(seed) {
 const matchingToolsCount = `<p class="info"> {{numOfTools}} matching the filters found </p>`;
 const matchingToolsTemplate = Handlebars.compile(matchingToolsCount);
 
-function hideOrShowText(text) {
-    text.classList.toggle("is-clipped");
-    text.style.whiteSpace = text.classList.contains("is-clipped") ?  "nowrap" : "normal";
-};
-
-
 const tools = `
 {{#each tools}}
-    <div class="card ai-tool" onClick="window.location='{{this.link}}'">
+    <div class="card ai-tool" onClick="window.location='{{this.linkDescription}}'">
         <div class="card-content is-flex is-flex-direction-column ai-tool-content">
                 <h1 class="has-text-weight-bold is-size-3">
-                    <a href="/resources.html?r=0" title="Learn more about this tool">{{this.name}}</a>
+                    <a href="{{this.linkDescription}}" title="Learn more about this tool">{{this.name}}</a>
                     <a href={{this.link}} title="Visit website"><i class="fa fa-link fa-xs"></i></a>
                 </h1>
                 <h2 class="has-text-weight-semibold is-size-4"> {{this.affiliated}} </h2>
@@ -81,11 +75,16 @@ const tools = `
 
 const toolsTemplate = Handlebars.compile(tools)
 
+function toDescription(toolName) {
+	return toolName.toLowerCase().trim().replaceAll(" ", "");
+}
+
 function populate(res) {
     const amountOfTools =  Pluralize("tools", res.length, true);
     document.getElementById("info").innerHTML = matchingToolsTemplate({numOfTools: amountOfTools});
 
     res.forEach(r => {
+		r.linkDescription = `/tools/${toDescription(r.name)}.html`;
         r.tagsFullList = r.tags.join(", ");
         r.dateWithMonth = `${MONTHS[r.date[1] - 1]} ${r.date[0]}`
     })
@@ -98,14 +97,14 @@ function populateSingle(res, r_id) {
 	let tags = "Tags: ";
 
 	for (let i = 0; i < r.tags.length; i++)
-		tags += `${r.tags[i]}${i == r.tags.length - 1 ? "." : ", "}`;
+		tags += `${r.tags[i]}${i === r.tags.length - 1 ? "." : ", "}`;
 
 	root.innerHTML = `
 		<div class="col-resource">
 			<div class="resource">
 				<h1>${r.name}</h1>
 				${
-					r.affiliated == r.name ? "" :
+					r.affiliated === r.name ? "" :
 					"<h2>" + r.affiliated + "</h2>"
 				}
 				<h3>${MONTHS[r.date[1] - 1]} ${r.date[0]}</h3>
@@ -200,14 +199,7 @@ export const renderTools = async () => {
 
 	const params = new URLSearchParams(window.location.search);
 
-	if (params.has("r")) {
-		let r = parseInt(params.get("r"));
-
-		// update as per a single resource
-		populateSingle(resources, r);
-	}
-
-	let tags = document.getElementById("tags");
+	const tags = document.getElementById("tags");
 
 	for (const r of resources) {
 		for (const t of r.tags) {
@@ -227,7 +219,7 @@ export const renderTools = async () => {
 				// when tag button is clicked
 				// change the state of the "true/false value"
 				e.onclick = () => {
-					tag_enabled.set(t, tag_enabled.get(t) ? false : true);
+					tag_enabled.set(t, !tag_enabled.get(t));
 					e.classList.toggle("enabled");
 					update();
 				};
