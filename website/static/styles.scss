@@ -139,9 +139,13 @@ html {
     height: 100%;
 }
 
+#main-wrap > .container {
+    width: 100%;
+}
+
 .tool-description {
-    padding: 40px;
-    padding-top:0px;
+    padding: 0px 40px 40px;
+
     .tool-description-content {
         padding: 0px 20px;
         p {
