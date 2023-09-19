@@ -1,7 +1,7 @@
 {
     "type": "module",
     "scripts": {
-        "css-watch": "npx sass  --watch sass/bulma.scss website/static/bulma.css",
+        "css-watch": "npx sass  --watch website/static/bulma.scss website/static/bulma.css",
         "start": "bundle exec foreman start",
         "start:acceptance": "browser-sync start --no-open --s '_site' --f='_site'",
         "build:watch": "webpack --watch",

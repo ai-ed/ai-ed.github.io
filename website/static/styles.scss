@@ -8,18 +8,22 @@ $site-link: #e8e8ff;
 $article-link: #a0a0e8;
 $link: #01BAEF;
 $info: $article-link;
+
 @import "sass/utilities/derived-variables";
+
 $orchid-pink: #F4BBD3;
 $amethyst: #7D70BA;
 $black-olive: #343633;
 $tag-filter: #DAF7DC;
 $card-hover: #CC59D2;
+$card-border: $amethyst;
+
 @import "bulma.sass";
 
 :root {
-	  --lt: #e0e0f0;
-	  --card:        #F1E4F3;
-	  --card-border:#{$amethyst};
+    --lt: #e0e0f0;
+    --card:#F1E4F3;
+    --card-border:#{$card-border};
     --card-hover: #{$card-hover};
 }
 
@@ -27,12 +31,19 @@ html, body {
     height: 100%;
 }
 
+.navbar-brand {
+    a {
+        color: $black-olive;
+    }
+}
+
 .ai-tool {
     border-radius: 30px;
     background-color: var(--card);
-    border: 1px solid var(--card-border);
-    border-color: darken($orchid-pink, 40%);
+    border: 1px solid $card-border;
     color: $black-olive;
+    box-shadow: 0px 10px 13px -7px lighten($amethyst, 20%);
+
     a {
         color: $black-olive;
     }
@@ -44,8 +55,8 @@ html, body {
     }
     &:hover {
         cursor: pointer;
-        background-color: darken($orchid-pink, 40%);
-        border-color: $black-olive;
+        background-color: darken($orchid-pink, 30%);
+        border-color: $orchid-pink;
         color: ivory;
         a {
             color: ivory;
@@ -101,6 +112,7 @@ html, body {
 
 #resources {
     gap: 1rem;
+    padding: 10px;
 }
 
 .ai-tool-content {

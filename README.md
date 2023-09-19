@@ -15,7 +15,7 @@ Static JSON Database for Resources:
         "description":  "An online chat application utilizing OpenAI's GPT large language model (LLM) to understand user inputs and generate outputs.",
         "released":     "30-10-2022",
         "link":         "https://chat.openai.com/"
-    },
+    }
 ]
 ```
 
