@@ -135,8 +135,19 @@ html {
     height: 100%
 }
 
-#main-wrap {
+#main-wrap, .ai-ed {
     height: 100%;
+}
+
+.tool-description {
+    padding: 40px;
+    padding-top:0px;
+    .tool-description-content {
+        padding: 0px 20px;
+        p {
+            margin-top: 20px;
+        }
+    }
 }
 .welcome-container {
     padding-bottom: 5rem;
