@@ -29,6 +29,7 @@ $card-border: $amethyst;
 
 html, body {
     height: 100%;
+    font-size: 14px;
 }
 
 .navbar-brand {
@@ -36,6 +37,7 @@ html, body {
         color: $black-olive;
     }
 }
+
 
 .ai-tool {
     border-radius: 30px;
@@ -78,16 +80,28 @@ html, body {
         display: grid;
     }
     .ai-tool {
-        flex-basis: 51%; 
+        flex-basis: 95%;
     }
     #resources {
         padding: 0 20px;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .blurb {
+        word-break: break-all;
+        white-space: normal;
     }
 }
 
 @include tablet {
     .ai-tool {
-        flex-basis: 40%; 
+        flex-basis: 48%;
+    }
+    body {
+        font-size: 16px;
     }
 }
 
@@ -105,9 +119,12 @@ html, body {
 }
 
 .blurb {
-    width: 365px;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.blurb {
+    word-break: break-all;
+    white-space: normal;
 }
 
 #resources {
