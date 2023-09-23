@@ -1,26 +1,17 @@
 ---
 layout: tool
-title: ChatGPT
+title: Elicit
 ---
 
-ChatGPT is a conversational AI model developed by OpenAI. It is based on the GPT-3.5 architecture, which is an advanced version of the GPT-3 model. GPT stands for "Generative Pre-trained Transformer," and it represents a state-of-the-art natural language processing model.
+Elicit is an AI tool to find 'seed articles' to mine for keywords/subject headings.  When you enter a question, it returns alternate questions that can lead to further "seed" articles.
 
-Here are some key characteristics and features of ChatGPT:
+Here are some key characteristics and features of Elicit:
 
-1. **Conversational Abilities:** ChatGPT is designed to engage in natural and human-like conversations with users. It can understand and generate text in a conversational context, making it suitable for chatbots, virtual assistants, and other interactive applications.
+1. **Automate Research:** Elicit uses language models to help you automate research workflows, like parts of literature review.
 
-2. **Large-scale Pre-training:** Like its predecessors, ChatGPT has been trained on a massive amount of text data from the internet. This pre-training allows it to have a broad understanding of various topics and languages.
+2. **Locate Key Information:** Elicit can find relevant papers without perfect keyword match, summarize takeaways from the paper specific to your question, and extract key information from the papers.
 
-3. **Contextual Understanding:** ChatGPT has the ability to maintain context in a conversation. It can remember previous messages and use that context to generate coherent and contextually relevant responses.
+3. **Assist With Other Facets Of Research:** While answering questions with research is the main focus of Elicit, there are also other research tasks that help with brainstorming, summarization, and text classification.
 
-4. **Multilingual Support:** It can understand and generate text in multiple languages, making it accessible to users around the world.
+4. **Transfer Work:** You can save and export your work to citation managers such as Zotero.
 
-5. **Customizability:** Developers can fine-tune ChatGPT for specific tasks or industries, which means it can be tailored to provide more specialized responses and functionalities.
-
-6. **Limitations:** Like all AI models, ChatGPT has limitations. It can sometimes produce incorrect or biased information, and it might generate responses that sound plausible but are factually incorrect or inappropriate. OpenAI has implemented safety measures to mitigate these issues, but they may not be entirely eliminated.
-
-7. **API Integration:** OpenAI provides an API for developers to integrate ChatGPT into their applications, websites, or services, making it accessible to a wide range of developers and businesses.
-
-8. **Commercial and Research Use:** ChatGPT can be used both for commercial applications and for research purposes, opening up possibilities for a wide array of applications.
-
-It's important to note that ChatGPT's knowledge is based on information available up to September 2021, and there may have been developments or improvements to ChatGPT since that time. Additionally, OpenAI has been actively working on addressing the ethical and safety concerns associated with AI models like ChatGPT to make them more responsible and reliable.
