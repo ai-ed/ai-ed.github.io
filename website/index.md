@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="is-flex is-flex-grow-1 ai-ed">
+<section class="is-flex is-flex-grow-1 ai-ed is-justify-content-center">
     <div class="welcome-container is-align-self-center has-text-centered">
                   <div class="welcome-msg title"> Welcome to AI-ED</div>
                   <h2 class="subtitle is-4 pt-4"> AI resources for academic use</h2>
