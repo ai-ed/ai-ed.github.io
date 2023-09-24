@@ -66,7 +66,7 @@ const tools = `
                 </h1>
                 <h2 class="has-text-weight-semibold is-size-4"> {{this.affiliated}} </h2>
             <h3 class="is-size-4">{{this.dateWithMonth}}</h3>
-            <p class="blurb" onClick="hideOrShowText(this)"> {{this.blurb}} </p>
+            <p class="blurb" > {{this.blurb}} </p>
             <h4 class="is-size-5">Tags: {{this.tagsFullList}} </h4>
         </div>
     </div>
