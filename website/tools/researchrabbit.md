@@ -22,5 +22,3 @@ Here are some key characteristics and features of ChatGPT:
 7. **API Integration:** OpenAI provides an API for developers to integrate ChatGPT into their applications, websites, or services, making it accessible to a wide range of developers and businesses.
 
 8. **Commercial and Research Use:** ChatGPT can be used both for commercial applications and for research purposes, opening up possibilities for a wide array of applications.
-
-It's important to note that ChatGPT's knowledge is based on information available up to September 2021, and there may have been developments or improvements to ChatGPT since that time. Additionally, OpenAI has been actively working on addressing the ethical and safety concerns associated with AI models like ChatGPT to make them more responsible and reliable.
