@@ -92,6 +92,19 @@ layout: default
 ```
 Layouts help avoid repeating code in each HTML. Please take a look a the _Jekyll_ [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) information for more details.
 
+#### Creating a page for an AI tool
+
+Create an md file using the name of the tool in lowercase and put the tool layout and title of the tool in the front matter like this.
+
+```md
+---
+layout: tool
+title: [title of tool]
+---
+```
+
+Add the content for the page below the front matter.
+
 #### Adding custom styles
 
 The website uses [Sass](https://sass-lang.com/) and [Bulma](https://bulma.io/) for the styling of the site. If you want to change the styles go to `website/static/styles.scss`. This file contains a mix of Sass and plain CSS. 
