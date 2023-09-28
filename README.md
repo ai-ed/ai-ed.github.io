@@ -8,6 +8,7 @@ Welcome to AI-ED! This is a platform designed for students, teachers and everyon
 ---
 # Contribute
 
+
 If you are interested in working on the repository and code for the website, visit the [Issues](https://github.com/ai-ed/ai-ed.github.io/issues) to see further development goals and create Pull Requests to the repository, which will be merged on review and approval. Read more about local development and contribution below.
 
 
@@ -104,8 +105,20 @@ layout: default
 ```
 Layouts help avoid repeating code in each HTML. Please take a look a the _Jekyll_ [layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/) information for more details.
 
+#### Creating a page for an AI tool
 
-### Adding custom styles
+Create an md file using the name of the tool in lowercase and put the tool layout and title of the tool in the front matter like this.
+
+```md
+---
+layout: tool
+title: [title of tool]
+---
+```
+
+Add the content for the page below the front matter.
+
+#### Adding custom styles
 
 The website uses [Sass](https://sass-lang.com/) and [Bulma](https://bulma.io/) for the styling of the site. If you want to change the styles go to `website/static/styles.scss`. This file contains a mix of Sass and plain CSS. 
 **Note**: If you want to change any of Bulma's [initial variables](https://github.com/jgthms/bulma/blob/master/sass/utilities/initial-variables.sass), override them before the line which says `@import "bulma.sass"`.
